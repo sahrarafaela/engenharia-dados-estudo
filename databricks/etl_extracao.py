@@ -10,7 +10,7 @@ data_execucao = dbutils.widgets.get("data_execucao")
 def extraindo_dados(date, base="BRL"):
     url = f"https://api.apilayer.com/exchangerates_data/{date}?base={base}"
     headers = {
-        "apikey": "sua_chave_aqui"  # Substitua pela sua chave real
+        "apikey": "kFeXLvg2zmtAw2DEtjzsjE5F4KoAgmi9"  # Substitua pela sua chave real
     }
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
