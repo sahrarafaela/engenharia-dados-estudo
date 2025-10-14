@@ -12,20 +12,20 @@ with DAG(
     extrair = DatabricksRunNowOperator(
         task_id='extrair_dados',
         databricks_conn_id='databricks_default',
-        job_id='seu_job_id_extracao',
+        job_id=1056601487612912,
         notebook_params={"data_execucao": '{{ ds }}'}
     )
 
     transformar = DatabricksRunNowOperator(
         task_id='transformar_dados',
         databricks_conn_id='databricks_default',
-        job_id='seu_job_id_transformacao'
+        job_id=129071450056557
     )
 
     enviar = DatabricksRunNowOperator(
         task_id='enviar_relatorio',
         databricks_conn_id='databricks_default',
-        job_id='seu_job_id_envio'
+        job_id=12907145056557
     )
 
     extrair >> transformar >> enviar
