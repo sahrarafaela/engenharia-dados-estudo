@@ -3,14 +3,14 @@ from pyspark.sql.functions import lit
 from datetime import datetime
 from pyspark.sql import SparkSession
 
-# Widget para passar a data de execução
+
 dbutils.widgets.text("data_execucao", "")
 data_execucao = dbutils.widgets.get("data_execucao")
 
 def extraindo_dados(date, base="BRL"):
     url = f"https://api.apilayer.com/exchangerates_data/{date}?base={base}"
     headers = {
-        "apikey": "kFeXLvg2zmtAw2DEtjzsjE5F4KoAgmi9"  # Substitua pela sua chave real
+        "apikey": "kFeXLvg2zmtAw2DEtjzsjE5F4KoAgmi9"
     }
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
@@ -29,6 +29,6 @@ def salvar_arquivo_parquet(conversoes_extraidas):
     df.write.format("parquet").mode("overwrite").save(caminho)
     print(f"Arquivo salvo em: {caminho}")
 
-# Execução
+
 cotacoes = extraindo_dados(data_execucao)
 salvar_arquivo_parquet(cotacoes)
