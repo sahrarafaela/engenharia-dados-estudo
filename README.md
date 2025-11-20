@@ -1,4 +1,4 @@
-# 📘 Estudo de Engenharia de Dados — Procedures, Azure, Databricks e PySpark
+# 📘 Estudo de Engenharia de Dados: Procedures, Azure, Databricks e PySpark
 
 Este repositório documenta os principais tópicos que estudei nos últimos dias como parte da minha jornada em Engenharia de Dados. Aqui você encontrará exemplos práticos, anotações técnicas e reflexões sobre:
 
